@@ -29,7 +29,6 @@ const images = [
 
   return imageItemListEl;
   })
-  .join('');
 
 
 
