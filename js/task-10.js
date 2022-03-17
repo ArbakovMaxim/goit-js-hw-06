@@ -16,7 +16,6 @@ refs.input.addEventListener("input", onInput);
   function onInput(event){
     refs.input.value =  event.currentTarget.value;
 }
-const amount = refs.input.value;
 
   const onButton = () => {
     const amount = refs.input.value;
@@ -26,17 +25,17 @@ const amount = refs.input.value;
 refs.createButton.addEventListener("click", onButton);
 
 
-    function createBoxes(amount){
-      const arrey = [];
-      for (let i = 0 + 1; i <= amount ; i+=1){  
+    function createBoxes(amountElements){
+      const arreyDiv = [];
+      for (let i = 0 + 1; i <= amountElements ; i+=1){  
         const divEl = document.createElement('div')
           divEl.style.width = (20  + (i * 10)) + "px";
           divEl.style.height = (20 + (i * 10)) + "px" ;
           divEl.style.backgroundColor = getRandomHexColor();
-        arrey.push(divEl);
+        arreyDiv.push(divEl);
       }
-      refs.boxes.append(...arrey);
-      console.log(arrey)
+      refs.boxes.append(...arreyDiv);
+      console.log(arreyDiv)
     }
 
     const destroyBoxes = () => {
@@ -44,5 +43,4 @@ refs.createButton.addEventListener("click", onButton);
       refs.input.value = '';
     }
 
-    
     refs.destroyButton.addEventListener("click", destroyBoxes);
