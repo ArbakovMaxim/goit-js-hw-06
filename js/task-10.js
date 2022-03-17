@@ -4,22 +4,22 @@ function getRandomHexColor() {
 
 
 const refs = {
-  imput : document.querySelector("input"),
+  input : document.querySelector("input"),
   createButton : document.querySelector("[data-create]"),
   destroyButton : document.querySelector("[data-destroy]"),
   boxes : document.querySelector("#boxes"),
 }
 
 
-refs.imput.addEventListener("input", onInput);
+refs.input.addEventListener("input", onInput);
 
   function onInput(event){
-    refs.imput.value =  event.currentTarget.value;
+    refs.input.value =  event.currentTarget.value;
 }
-
+const amount = refs.input.value;
 
   const onButton = () => {
-    const amount = refs.imput.value;
+    const amount = refs.input.value;
     createBoxes(amount);
 }
 
@@ -27,24 +27,22 @@ refs.createButton.addEventListener("click", onButton);
 
 
     function createBoxes(amount){
-      const ress = [];
-
+      const arrey = [];
       for (let i = 0 + 1; i <= amount ; i+=1){  
-        ress.push(i);                 
-      } 
-      const allDiv = ress.map(res => {
         const divEl = document.createElement('div')
-          divEl.style.width = (20  + (res * 10)) + "px";
-          divEl.style.height = (20 + (res * 10)) + "px" ;
+          divEl.style.width = (20  + (i * 10)) + "px";
+          divEl.style.height = (20 + (i * 10)) + "px" ;
           divEl.style.backgroundColor = getRandomHexColor();
-      
-        return divEl
-      })
-      refs.boxes.append(...allDiv);
+        arrey.push(divEl);
+      }
+      refs.boxes.append(...arrey);
+      console.log(arrey)
     }
 
     const destroyBoxes = () => {
       refs.boxes.innerHTML = '';
+      refs.input.value = '';
     }
+
     
     refs.destroyButton.addEventListener("click", destroyBoxes);
