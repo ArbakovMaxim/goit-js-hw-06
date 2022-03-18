@@ -10,12 +10,10 @@ const refs = {
   boxes : document.querySelector("#boxes"),
 }
 
-//let amount = 0;
 let size = {
   width : 20,
   height : 20
 }
-
 
 refs.input.addEventListener("input", valueInput);
 
