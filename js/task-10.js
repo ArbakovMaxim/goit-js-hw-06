@@ -10,10 +10,16 @@ const refs = {
   boxes : document.querySelector("#boxes"),
 }
 
+//let amount = 0;
+let size = {
+  width : 20,
+  height : 20
+}
 
-refs.input.addEventListener("input", onInput);
 
-  function onInput(event){
+refs.input.addEventListener("input", valueInput);
+
+  function valueInput(event){
     refs.input.value =  event.currentTarget.value;
 }
 
@@ -29,8 +35,11 @@ refs.createButton.addEventListener("click", onButton);
       const arreyDiv = [];
       for (let i = 0 + 1; i <= amountElements ; i+=1){  
         const divEl = document.createElement('div')
-          divEl.style.width = (20  + (i * 10)) + "px";
-          divEl.style.height = (20 + (i * 10)) + "px" ;
+          size.height += 10;
+          size.width  += 10;
+
+          divEl.style.width = size.width + "px";
+          divEl.style.height = size.height + "px" ;
           divEl.style.backgroundColor = getRandomHexColor();
         arreyDiv.push(divEl);
       }
@@ -41,6 +50,9 @@ refs.createButton.addEventListener("click", onButton);
     const destroyBoxes = () => {
       refs.boxes.innerHTML = '';
       refs.input.value = '';
+      size.height = 20;
+      size.width = 20;
+
     }
 
     refs.destroyButton.addEventListener("click", destroyBoxes);
