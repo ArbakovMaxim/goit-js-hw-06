@@ -42,7 +42,6 @@ refs.createButton.addEventListener("click", onButton);
         arreyDiv.push(divEl);
       }
       refs.boxes.append(...arreyDiv);
-      console.log(arreyDiv)
     }
 
     const destroyBoxes = () => {
