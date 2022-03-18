@@ -11,8 +11,8 @@ const refs = {
 }
 
 let size = {
-  width : 20,
-  height : 20
+  width : 30,
+  height : 30
 }
 
 refs.input.addEventListener("input", valueInput);
@@ -33,11 +33,13 @@ refs.createButton.addEventListener("click", onButton);
       const arreyDiv = [];
       for (let i = 0 + 1; i <= amountElements ; i+=1){  
         const divEl = document.createElement('div')
-          size.height += 10;
-          size.width  += 10;
 
           divEl.style.width = size.width + "px";
           divEl.style.height = size.height + "px" ;
+
+          size.height += 10;
+          size.width  += 10;
+
           divEl.style.backgroundColor = getRandomHexColor();
         arreyDiv.push(divEl);
       }
@@ -47,8 +49,8 @@ refs.createButton.addEventListener("click", onButton);
     const destroyBoxes = () => {
       refs.boxes.innerHTML = '';
       refs.input.value = '';
-      size.height = 20;
-      size.width = 20;
+      size.height = 30;
+      size.width = 30;
 
     }
 
