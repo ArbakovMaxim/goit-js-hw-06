@@ -38,7 +38,7 @@ const images = [
 
   const imagesEl = images.map(image =>{
 
-    return  `<li class = item,><img class=img, alt = '${image.alt}', src= ${image.url}, width = 420px, height = 260px></li>`
+    return  `<li class = item><img class=img alt = '${image.alt}' src= ${image.url} width = 420px height = 260px></li>`
     })
     .join('');
   
