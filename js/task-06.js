@@ -1,10 +1,10 @@
-const imput = document.querySelector("#validation-input");
+const input = document.querySelector("#validation-input");
 
-imput.addEventListener('blur', inputLength);
+input.addEventListener('blur', inputLength);
 
 function inputLength (event){
-    if (event.currentTarget.value.length === 6){
-       return imput.classList ='valid';
+    if (event.currentTarget.value.length === input.dataset.length){
+       return input.classList ='valid';
     }
-    imput.classList = "invalid";
+    input.classList = "invalid";
 }
